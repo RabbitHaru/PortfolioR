@@ -4,6 +4,7 @@ import skillsData from "@/data/skills.json";
 import { Project, SkillCategory } from "@/types";
 import { Server, Database, Container, Code2 } from "lucide-react";
 import CopyEmailButton from "@/components/CopyEmailButton";
+import PresentationSection from "@/components/PresentationSection";
 
 export default function Home() {
   const projects: Project[] = projectsData;
@@ -111,6 +112,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* --- PRESENTATION SECTION (미래 PPT) --- */}
+      {/* 
+        새롭게 추가된 프레젠테이션/문서 다운로드 섹션입니다.
+        components/PresentationSection.tsx 내부를 수정하세요.
+      */}
+      <PresentationSection />
 
       {/* --- FOOTER --- */}
       <footer className="py-12 border-t border-white/10 mt-auto text-center text-slate-500 text-sm">
