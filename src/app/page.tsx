@@ -14,7 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0f172a] text-slate-50 selection:bg-cyan-500/30 font-sans">
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-[#0f172a] to-[#0f172a]" />
 
         <div className="container mx-auto px-6 relative z-10 max-w-5xl">
