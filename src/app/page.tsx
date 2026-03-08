@@ -5,6 +5,7 @@ import { Project, SkillCategory } from "@/types";
 import { Server, Database, Container, Code2 } from "lucide-react";
 import CopyEmailButton from "@/components/CopyEmailButton";
 import PresentationSection from "@/components/PresentationSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   const projects: Project[] = projectsData;
@@ -60,36 +61,40 @@ export default function Home() {
       {/* 보유 기술(Tech Stack) 섹션입니다. data/skills.json 에서 데이터를 불러옵니다. */}
       <section id="skills" className="py-20 bg-slate-900/50 border-y border-white/5">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="flex items-center gap-3 mb-12">
-            <Database className="w-8 h-8 text-cyan-500" />
-            <h2 className="text-3xl font-bold">Tech Stack</h2>
-          </div>
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-12">
+              <Database className="w-8 h-8 text-cyan-500" />
+              <h2 className="text-3xl font-bold">Tech Stack</h2>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
             {skills.map((category, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/20 transition-colors">
-                <h3 className="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2">
-                  {category.category === 'Backend' && <Server className="w-5 h-5" />}
-                  {category.category === 'Database' && <Database className="w-5 h-5" />}
-                  {category.category === 'Tools / Infra' && <Container className="w-5 h-5" />}
-                  {category.category}
-                </h3>
-                <div className="space-y-6">
-                  {category.items.map((skill, sIdx) => (
-                    <div key={sIdx}>
-                      <h4 className="font-medium text-slate-200 mb-2">{skill.name}</h4>
-                      <ul className="space-y-2">
-                        {skill.details.map((detail, dIdx) => (
-                          <li key={dIdx} className="text-sm text-slate-400 flex gap-2 leading-relaxed">
-                            <span className="text-cyan-500/50 mt-1">•</span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+              <ScrollReveal direction={idx % 2 === 0 ? "right" : "left"} delay={idx * 0.1} key={idx}>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/20 transition-colors h-full">
+                  <h3 className="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2">
+                    {category.category === 'Backend' && <Server className="w-5 h-5" />}
+                    {category.category === 'Database' && <Database className="w-5 h-5" />}
+                    {category.category === 'Tools / Infra' && <Container className="w-5 h-5" />}
+                    {category.category}
+                  </h3>
+                  <div className="space-y-6">
+                    {category.items.map((skill, sIdx) => (
+                      <div key={sIdx}>
+                        <h4 className="font-medium text-slate-200 mb-2">{skill.name}</h4>
+                        <ul className="space-y-2">
+                          {skill.details.map((detail, dIdx) => (
+                            <li key={dIdx} className="text-sm text-slate-400 flex gap-2 leading-relaxed">
+                              <span className="text-cyan-500/50 mt-1">•</span>
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -100,14 +105,18 @@ export default function Home() {
       {/* 각각의 아이템은 components/ProjectCard.tsx 컴포넌트로 렌더링됩니다. */}
       <section id="projects" className="py-24">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="flex items-center gap-3 mb-12">
-            <Code2 className="w-8 h-8 text-cyan-500" />
-            <h2 className="text-3xl font-bold">Projects</h2>
-          </div>
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-12">
+              <Code2 className="w-8 h-8 text-cyan-500" />
+              <h2 className="text-3xl font-bold">Projects</h2>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {projects.map((project, idx) => (
+              <ScrollReveal delay={idx * 0.15} key={project.id}>
+                <ProjectCard project={project} />
+              </ScrollReveal>
             ))}
           </div>
         </div>
