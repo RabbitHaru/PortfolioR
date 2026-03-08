@@ -1,0 +1,117 @@
+[
+    {
+        "category": "Backend",
+        "items": [
+            {
+                "name": "JAVA",
+                "details": [
+                    "JDK 기반 자료구조 관리 및 Spring AOP를 활용한 공통 관심사(감사 로그) 분리",
+                    "OOP(상속, 다형성) 실무 적용 및 안정적인 예외 처리 로직 설계 능력 보유"
+                ]
+            },
+            {
+                "name": "Spring Framework & Spring Boot",
+                "details": [
+                    "MVC 패턴 기반 RESTful API 설계 및 JWT, Redis(RTR)를 활용한 무상태 인증 구현",
+                    "Spring Security와 Cloudflare Turnstile 연동을 통한 보안 계층 강화 및 MFA 구현"
+                ]
+            },
+            {
+                "name": "JSP / Servlet",
+                "details": [
+                    "서블릿 라이프사이클 및 Session/Cookie를 활용한 사용자 상태 유지 관리",
+                    "MVC 모델2 방식을 적용한 웹 애플리케이션 구조 설계 및 게시판 기능 구현"
+                ]
+            },
+            {
+                "name": "Python",
+                "details": [
+                    "BeautifulSoup, Selenium 활용 동적 웹 페이지 분석 및 비정형 데이터 추출",
+                    "수집된 데이터의 실시간 파싱(Parsing) 및 DB 적재를 위한 효율적 처리 흐름 이해"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Frontend",
+        "items": [
+            {
+                "name": "HTML5 / CSS3",
+                "details": [
+                    "시맨틱 태그를 활용한 웹 표준 레이아웃 구성 및 Flex/Grid를 이용한 반응형 UI 구현",
+                    "Bootstrap 등 프레임워크를 활용하여 직관적이고 완성도 높은 화면 설계"
+                ]
+            },
+            {
+                "name": "JavaScript / jQuery",
+                "details": [
+                    "DOM 조작 및 이벤트 처리를 통한 동적 페이지 구현과 유효성 검증 로직 수행",
+                    "Ajax를 활용한 비동기 통신으로 사용자 경험(UX) 개선 및 데이터 실시간 처리"
+                ]
+            },
+            {
+                "name": "React",
+                "details": [
+                    "컴포넌트 재사용성을 고려한 UI 설계 및 State/Props 기반의 상태 관리 흐름 이해",
+                    "Axios를 활용한 백엔드 API와의 비동기 통신 및 TypeScript 기반 SPA 구현"
+                ]
+            },
+            {
+                "name": "Thymeleaf",
+                "details": [
+                    "SSR(Server Side Rendering) 방식을 통해 서버 데이터를 HTML 템플릿에 동적으로 바인딩하여 구현"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Database",
+        "items": [
+            {
+                "name": "Oracle / MariaDB / MySQL",
+                "details": [
+                    "Oracle 기반 대용량 데이터 처리와 복잡한 Join/Sub Query를 활용한 데이터 조회 및 최적화",
+                    "Querydsl 활용 타입 안전 쿼리 작성 및 JPA Auditing을 통한 데이터 추적 자동화",
+                    "Join(Inner/Outer), Sub Query, Index를 활용한 데이터 조회 및 쿼리 최적화 수행"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Tools / Infra",
+        "items": [
+            {
+                "name": "Git / GitHub",
+                "details": [
+                    "Git-flow 전략을 이해하고 Branch 관리, PR(Pull Request)을 통한 팀 프로젝트 협업 및 버전 관리",
+                    "PR(Pull Request) 중심의 코드 리뷰 및 협업 프로세스 이해와 Merge Conflict 해결 경험"
+                ]
+            },
+            {
+                "name": "AWS / Google Cloud / Firebase",
+                "details": [
+                    "AWS EC2/S3 기반 호스팅 및 GCP Compute Engine/Cloud Storage를 활용한 멀티 클라우드 인프라구축",
+                    "보안 그룹, VPC, 포트 설정 등 클라우드 네트워크 환경 이해 및 서비스 배포/운영"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Others",
+        "items": [
+            {
+                "name": "AutoCAD",
+                "details": [
+                    "ATC 캐드마스터 1급 자격 보유 및 2D/3D 도면 설계 기반 공간 데이터 모델링 이해"
+                ]
+            },
+            {
+                "name": "Arduino",
+                "details": [
+                    "Arduino Uno 기반의 C/C++ 펌웨어 코딩을 통한 하드웨어 제어 로직 설계",
+                    "센서 데이터 수집 및 액추에이터 동작 제어등을 통한 S/W와 H/W 간의 데이터 흐름 이해"
+                ]
+            }
+        ]
+    }
+]
