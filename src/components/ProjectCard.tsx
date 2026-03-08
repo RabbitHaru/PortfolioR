@@ -14,10 +14,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <>
+            {/* 카드 전체 컨테이너입니다. hover 시 떠오르는 효과(hover:-translate-y-2)가 적용되어 있습니다. */}
             <div
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 backdrop-blur-sm transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-white/20 cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
             >
+                {/* 상단: 프로젝트 제목, 구분(팀/개인), 기간, 인원, 기관명 요약 */}
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">
                         <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
@@ -45,6 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         </div>
                     </div>
 
+                    {/* 중단: 프로젝트 요약 설명 (최대 3줄 표시 후 말줄임표 처리 - line-clamp-3) */}
                     <div className="mt-4">
                         <p className="text-sm leading-relaxed text-slate-400 line-clamp-3">
                             {project.backgroundAndSummary}
@@ -52,6 +55,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </div>
                 </div>
 
+                {/* 하단: 기술 스택 (Tech Stack) 뱃지 목록 */}
                 <div className="mt-6">
                     <div className="flex items-center gap-2 mb-3">
                         <Code className="w-4 h-4 text-cyan-500" />

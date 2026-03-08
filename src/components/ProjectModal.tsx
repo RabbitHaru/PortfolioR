@@ -25,14 +25,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     if (!isOpen) return null;
 
     return (
+        // 모달창이 열렸을 때 화면 전체를 덮는 투명한 검은 베경입니다.
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-100 transition-opacity">
             <div
                 className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
                 onClick={onClose}
             />
+            {/* 실제 모달 컨텐츠가 들어가는 하얀 테두리 박스입니다. */}
             <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900 rounded-2xl shadow-2xl border border-white/10 flex flex-col pointer-events-auto">
 
-                {/* Header */}
+                {/* Header: 상단 고정 바 (프로젝트 제목과 닫기 버튼) */}
                 <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
                     <h2 className="text-2xl font-bold tracking-tight text-white">{project.title}</h2>
                     <button
@@ -79,7 +81,25 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         </ul>
                     </section>
 
-                    {/* Tech Stack */}
+                    {/* Troubleshooting: 트러블슈팅 및 문제 해결 경험 */}
+                    {project.troubleshooting && project.troubleshooting.length > 0 && (
+                        <section>
+                            <h3 className="text-lg font-semibold text-rose-400 mb-3 flex items-center gap-2">
+                                <span className="p-1 bg-rose-500/10 rounded-md">🛠️</span>
+                                문제 해결 및 트러블슈팅
+                            </h3>
+                            <ul className="space-y-3">
+                                {project.troubleshooting.map((item, index) => (
+                                    <li key={index} className="flex gap-3 text-slate-300 leading-relaxed bg-rose-500/5 p-4 rounded-xl border border-rose-500/10">
+                                        <span className="text-rose-400 mt-1.5">•</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    )}
+
+                    {/* Tech Stack: 사용된 기술 스택 배지 */}
                     <section>
                         <h3 className="text-lg font-semibold text-white mb-3">사용 기술 및 개발 환경</h3>
                         <div className="flex flex-wrap gap-2">
@@ -94,7 +114,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         </div>
                     </section>
 
-                    {/* Links */}
+                    {/* Links: 구동 영상이나 깃허브 링크 버튼 */}
                     {(project.links && project.links.length > 0) && (
                         <section className="pt-4 border-t border-white/10">
                             <h3 className="text-lg font-semibold text-white mb-4">관련 링크</h3>
