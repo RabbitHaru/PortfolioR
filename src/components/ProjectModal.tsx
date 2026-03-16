@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from "@/types";
-import { X, ExternalLink, PlayCircle } from "lucide-react";
+import { X, ExternalLink, PlayCircle, FileText, RefreshCcw } from "lucide-react";
 import { useEffect } from "react";
 
 interface ProjectModalProps {
@@ -115,11 +115,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     </section>
 
                     {/* Links: 구동 영상이나 깃허브 링크 버튼 */}
-                    {(project.links && project.links.length > 0) && (
+                    {((project.links && project.links.length > 0) || project.presentationUrl) && (
                         <section className="pt-4 border-t border-white/10">
-                            <h3 className="text-lg font-semibold text-white mb-4">관련 링크</h3>
-                            <div className="flex gap-4">
-                                {project.links.map((link, index) => (
+                            <h3 className="text-lg font-semibold text-white mb-4">관련 링크 및 자료</h3>
+                            <div className="flex flex-wrap gap-4">
+                                {project.links && project.links.map((link, index) => (
                                     <a
                                         key={index}
                                         href={link.url}
@@ -135,8 +135,29 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                         {link.name}
                                     </a>
                                 ))}
+
+                                {project.presentationUrl && (
+                                    <a
+                                        href={project.presentationUrl}
+                                        download
+                                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 border border-cyan-500/20 transition-colors"
+                                    >
+                                        <FileText className="w-4 h-4" />
+                                        발표 자료 (PDF)
+                                    </a>
+                                )}
                             </div>
                         </section>
+                    )}
+
+                    {/* Footer Info: 업데이트 날짜 등 */}
+                    {project.lastUpdated && (
+                        <div className="pt-2 flex justify-end">
+                            <span className="text-[10px] text-slate-500 flex items-center gap-1">
+                                <RefreshCcw className="w-2.5 h-2.5" />
+                                자료 최신 업데이트: {project.lastUpdated}
+                            </span>
+                        </div>
                     )}
 
                 </div>

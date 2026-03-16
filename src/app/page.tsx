@@ -2,7 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 import projectsData from "@/data/projects.json";
 import skillsData from "@/data/skills.json";
 import { Project, SkillCategory } from "@/types";
-import { Server, Database, Container, Code2 } from "lucide-react";
+import { Server, Database, Container, Code2, Phone, Github } from "lucide-react";
 import CopyEmailButton from "@/components/CopyEmailButton";
 import PresentationSection from "@/components/PresentationSection";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -19,17 +19,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-[#0f172a] to-[#0f172a]" />
 
         <div className="container mx-auto px-6 relative z-10 max-w-5xl">
-          {/* 깜빡이는 점과 직군(Backend Developer) 뱃지 텍스트입니다. */}
+          {/* 깜빡이는 점과 실명/직군 정보입니다. */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
             </span>
-            Backend Developer
+            김태완 | Backend Developer
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-            견고하고 안정적인<br />서버를 설계합니다.
+            견고함과 정합성을<br />고민하는 개발자입니다.
           </h1>
 
           <p className="text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed mb-6">
@@ -37,20 +37,33 @@ export default function Home() {
             유지보수가 용이하고 확장 가능한 백엔드 시스템 구축을 지향합니다.
           </p>
 
-          {/* 자기 소개 텍스트 (추가됨) */}
-          <div className="max-w-2xl mb-10 p-5 rounded-2xl bg-white/5 border border-white/10 text-slate-300 leading-relaxed shadow-lg">
-            안녕하세요. 비즈니스 로직과 데이터 정합성을 깊게 고민하는 개발자입니다.
-            주어진 문제를 체계적인 아키텍처 설계와 기술적 접근으로 해결하는 과정을 즐깁니다.
+          {/* 자기 소개 텍스트 및 연락처 정보 */}
+          <div className="max-w-2xl mb-10 p-6 rounded-2xl bg-white/5 border border-white/10 text-slate-300 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="leading-relaxed">
+              안녕하세요. 비즈니스 로직과 데이터 정합성을 깊게 고민하는 김태완입니다.
+              문제를 체계적인 아키텍처로 해결하는 과정에서 즐거움을 느낍니다.
+            </div>
+            
+            {/* 스팸 방지를 위해 점(.)을 활용한 연락처 표시 */}
+            <div className="flex flex-col gap-2 min-w-[200px] border-l border-white/10 pl-6">
+              <div className="flex items-center gap-2 text-sm text-slate-400">
+                <Phone className="w-4 h-4 text-cyan-500" />
+                <span>010 . 4695 . 4572</span>
+              </div>
+              <div className="text-sm text-slate-400 flex items-center gap-2">
+                <span className="w-4 h-4 flex items-center justify-center font-bold text-cyan-500">@</span>
+                <span>rabbitharu1020@gmail.com</span>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-4">
             <a href="#projects" className="px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-colors shadow-lg shadow-cyan-500/20">
               프로젝트 보기
             </a>
-            {/* Contact 이메일 버튼 (복사 기능) */}
             <CopyEmailButton email="rabbitharu1020@gmail.com" />
             <a href="https://github.com/RabbitHaru" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 transition-colors flex items-center gap-2">
-              <Code2 className="w-5 h-5" />
+              <Github className="w-5 h-5" />
               GitHub
             </a>
           </div>
@@ -131,8 +144,8 @@ export default function Home() {
 
       {/* --- FOOTER --- */}
       <footer className="py-12 border-t border-white/10 mt-auto text-center text-slate-500 text-sm">
-        <p className="mb-2">본 사이트는 포트폴리오 목적으로 제작되었습니다.</p>
-        <p>© 2026 Backend Developer Portfolio. All rights reserved.</p>
+        <p className="mb-2">본 사이트는 포트폴리오 목적으로 제작되었습니다. (최종 수정일: 2026.03.16)</p>
+        <p>© 2026 김태완. All rights reserved.</p>
       </footer>
 
     </main>

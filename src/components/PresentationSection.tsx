@@ -1,4 +1,4 @@
-import { Presentation, Download, FileText } from "lucide-react";
+import { Presentation, Download, FileText, Clock } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function PresentationSection() {
@@ -19,30 +19,25 @@ export default function PresentationSection() {
                             <div className="flex items-center gap-3 mb-3">
                                 <Presentation className="w-8 h-8 text-cyan-500" />
                                 <h2 className="text-3xl font-bold text-white">Project Presentation</h2>
+                                <span className="px-2 py-0.5 text-xs font-bold bg-amber-500/10 text-amber-500 border border-amber-500/20 rounded-full flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    Preparing
+                                </span>
                             </div>
                             <p className="text-slate-400">
-                                세부 시스템 설계 및 아키텍처에 대한 발표 자료입니다.
+                                전체 포트폴리오 요약 자료는 준비 중입니다. <br />
+                                <span className="text-cyan-400/80 text-sm"> 각 프로젝트의 상세 발표 자료는 [Projects] 섹션의 상세 보기에서 확인하실 수 있습니다.</span>
                             </p>
                         </div>
 
                         {/* 다운로드 버튼 그룹 */}
-                        <div className="flex flex-wrap gap-3">
-                            <a
-                                href="/downloads/portfolio_presentation.pdf" // 나중에 실제 PDF 파일 경로로 변경하세요.
-                                download
-                                className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 font-medium border border-cyan-500/30 transition-colors"
+                        <div className="flex flex-wrap gap-3 opacity-50 grayscale pointer-events-none">
+                            <div
+                                className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-600/20 text-cyan-400 font-medium border border-cyan-500/30 transition-colors"
                             >
                                 <FileText className="w-4 h-4" />
-                                PDF 다운로드
-                            </a>
-                            <a
-                                href="/downloads/portfolio_presentation.pptx" // 나중에 실제 PPTX 파일 경로로 변경하세요.
-                                download
-                                className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 transition-colors shadow-lg"
-                            >
-                                <Download className="w-4 h-4" />
-                                원본 PPT 파일
-                            </a>
+                                PDF 다운로드 (준비중)
+                            </div>
                         </div>
                     </div>
                 </ScrollReveal>

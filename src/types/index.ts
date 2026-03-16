@@ -17,6 +17,9 @@ export interface Project {
   role: string[]; // 담당 역할 (리스트 형태로 모달에 출력됨)
   troubleshooting?: string[]; // (추가) 트러블슈팅 및 문제 해결 경험
   links: Link[]; // 관련 링크 배열
+  presentationUrl?: string; // (추가) 프로젝트별 발표 자료 링크 (PDF 등)
+  screenshots?: string[]; // (추가) PPT 핵심 장표 또는 기능 스크린샷 이미지 경로들
+  lastUpdated?: string; // (추가) 최근 데이터/자료 업데이트 날짜
 }
 
 // data/skills.json 의 최상위 카테고리 항목 (예: Backend, Frontend)

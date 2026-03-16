@@ -10,8 +10,8 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "백엔드 개발자 포트폴리오 | 정합성을 고민합니다",
-  description: "안전하고 논리적인 서버 아키텍처를 설계하는 신입 백엔드 개발자의 포트폴리오입니다.",
+  title: "김태완 | 백엔드 개발자 포트폴리오",
+  description: "데이터의 정합성과 안정적인 아키텍처를 고민하는 백엔드 개발자 김태완의 포트폴리오입니다.",
   openGraph: {
     title: "Backend Developer Portfolio",
     description: "데이터 중심 설계와 탄탄한 아키텍처를 지향하는 백엔드 개발자 포트폴리오",
