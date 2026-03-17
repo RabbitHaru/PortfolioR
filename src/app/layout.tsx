@@ -10,16 +10,16 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "김태완 | 백엔드 개발자 포트폴리오",
+  title: "김태완 | Backend Developer Portfolio",
   description: "데이터의 정합성과 안정적인 아키텍처를 고민하는 백엔드 개발자 김태완의 포트폴리오입니다.",
   openGraph: {
-    title: "Backend Developer Portfolio",
+    title: "김태완 | 백엔드 개발자 포트폴리오",
     description: "데이터 중심 설계와 탄탄한 아키텍처를 지향하는 백엔드 개발자 포트폴리오",
-    url: "https://your-domain.vercel.app", // 배포 후 본인 도메인으로 변경하세요
-    siteName: "Backend Portfolio",
+    url: "https://rabbitharu-portfolio.vercel.app", // 배포 후 본인의 실제 도메인으로 변경하세요
+    siteName: "TaeWan Kim Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // public 폴더에 og-image.jpg 를 추가하시면 카카오톡 링크 전송시 나타납니다.
+        url: "/og-image.jpg", 
         width: 1200,
         height: 630,
       },

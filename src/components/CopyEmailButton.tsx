@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Mail, Copy, Check } from "lucide-react";
 
 interface CopyEmailButtonProps {
     email: string;
@@ -14,20 +14,24 @@ export default function CopyEmailButton({ email }: CopyEmailButtonProps) {
         try {
             await navigator.clipboard.writeText(email);
             setCopied(true);
-            setTimeout(() => setCopied(false), 2000); // 2초 후 원래 텍스트로 복귀
-        } catch (error) {
-            console.error("이메일 복사 실패:", error);
-            alert("이메일 복사에 실패했습니다.");
+            setTimeout(() => setCopied(false), 2000);
+        } catch (err) {
+            console.error("Failed to copy:", err);
         }
     };
 
     return (
-        <button
+        <button 
             onClick={handleCopy}
-            className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 transition-colors flex items-center gap-2"
+            className="flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-slate-300 font-mono shadow-sm hover:border-cyan-500/50 hover:bg-white/[0.08] transition-all group/email h-[52px]"
         >
-            {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
-            {copied ? "이메일 복사완료!" : "이메일 주소 복사"}
+            <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-500 group-hover/email:bg-cyan-500 group-hover/email:text-white transition-all">
+                <Mail className="w-4 h-4" />
+            </div>
+            <span>{email}</span>
+            <div className="ml-2 opacity-0 group-hover/email:opacity-100 transition-opacity">
+                {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3 text-slate-500" />}
+            </div>
         </button>
     );
 }

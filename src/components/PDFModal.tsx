@@ -27,13 +27,15 @@ export default function PDFModal({ isOpen, onClose, fileUrl, title, initialPage 
         if (isOpen) {
             setCurrentPage(initialPage);
             // ESC 키 감지하여 닫기
-            const handleEsc = (e: KeyboardEvent) => {
+            const handleKeyDown = (e: KeyboardEvent) => {
                 if (e.key === "Escape") onClose();
+                if (e.key === "ArrowLeft") goToPrev();
+                if (e.key === "ArrowRight") goToNext();
             };
-            window.addEventListener("keydown", handleEsc);
+            window.addEventListener("keydown", handleKeyDown);
             document.body.style.overflow = "hidden"; // 배경 스크롤 차단
             return () => {
-                window.removeEventListener("keydown", handleEsc);
+                window.removeEventListener("keydown", handleKeyDown);
                 document.body.style.overflow = "auto";
             };
         }

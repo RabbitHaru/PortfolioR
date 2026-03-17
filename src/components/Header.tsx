@@ -2,9 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { Terminal } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    
+    // 스크롤 진행도를 계산합니다.
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     // 스크롤 감지 이벤트로 헤더 배경의 투명도 조절
     useEffect(() => {
@@ -41,6 +50,11 @@ export default function Header() {
                     : "bg-transparent py-5"
                 }`}
         >
+            {/* 스크롤 진행 바 */}
+            <motion.div
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan-500 origin-left"
+                style={{ scaleX }}
+            />
             <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
 
                 {/* 상단 로고 역할 (Home으로 이동) */}

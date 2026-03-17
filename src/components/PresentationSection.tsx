@@ -14,9 +14,9 @@ const PDFPreview = dynamic(() => import("@/components/PDFPreview"), {
 export default function PresentationSection() {
     // 실제 업로드해주신 PDF 파일들을 미리보기로 연결합니다.
     const slidesData = [
-        { id: 1, title: "전체 포트폴리오 메인", file: "/downloads/Protfolio_김태완.V.260317.pdf", category: "Portfolio" },
-        { id: 2, title: "Ex-Ledger 아키텍처", file: "/downloads/ex-ledger_presentation.pdf", category: "Project 1" },
-        { id: 3, title: "Weatherly 데이터 흐름", file: "/downloads/weatherly_presentation.pdf", category: "Project 2" },
+        { id: 1, title: "전체 포트폴리오 메인", file: "/downloads/Protfolio_김태완.V.260317.pdf", category: "Full Portfolio" },
+        { id: 2, title: "Ex-Ledger 상세 아키텍처", file: "/downloads/ex-ledger_presentation.pdf", category: "Ex-Ledger" },
+        { id: 3, title: "Weatherly 데이터 흐름", file: "/downloads/weatherly_presentation.pdf", category: "Weatherly" },
     ];
 
     // 각 카드별 현재 보여지는 페이지들을 관리하는 상태입니다.
