@@ -57,15 +57,8 @@ export default function Header() {
                     </span>
                 </a>
 
-                {/* 내비게이션 메뉴 */}
+                {/* 내비게이션 메뉴 (페이지 순서에 맞춰 배치) */}
                 <nav className="flex items-center gap-1 sm:gap-6 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                    <a
-                        href="#skills"
-                        onClick={(e) => scrollToSection(e, "skills")}
-                        className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
-                    >
-                        Tech Stack
-                    </a>
                     <a
                         href="#projects"
                         onClick={(e) => scrollToSection(e, "projects")}
@@ -79,6 +72,13 @@ export default function Header() {
                         className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
                     >
                         Presentation
+                    </a>
+                    <a
+                        href="#skills"
+                        onClick={(e) => scrollToSection(e, "skills")}
+                        className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                    >
+                        Tech Stack
                     </a>
                 </nav>
 
