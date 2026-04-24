@@ -29,7 +29,6 @@ export default function Header() {
         e.preventDefault();
         const element = document.getElementById(id);
         if (element) {
-            // 상단 헤더 높이를 고려하여 여백을 두고 스크롤
             const offset = 80;
             const bodyRect = document.body.getBoundingClientRect().top;
             const elementRect = element.getBoundingClientRect().top;
@@ -45,19 +44,17 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-slate-950/80 backdrop-blur-md border-b border-white/10 py-3 shadow-xl"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+                    ? "bg-white/70 dark:bg-slate-950/40 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 py-3 shadow-lg"
                     : "bg-transparent py-5"
                 }`}
         >
-            {/* 스크롤 진행 바 */}
             <motion.div
                 className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan-500 origin-left"
                 style={{ scaleX }}
             />
             <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
 
-                {/* 상단 로고 역할 (Home으로 이동) */}
                 <a
                     href="#home"
                     onClick={(e) => scrollToSection(e, "home")}
@@ -66,31 +63,37 @@ export default function Header() {
                     <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg group-hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-shadow">
                         <Terminal className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors hidden sm:block">
+                    <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors hidden sm:block">
                         Backend Dev
                     </span>
                 </a>
 
-                {/* 내비게이션 메뉴 (페이지 순서에 맞춰 배치) */}
-                <nav className="flex items-center gap-1 sm:gap-6 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                <nav className="flex items-center gap-1 sm:gap-4 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                     <a
                         href="#projects"
                         onClick={(e) => scrollToSection(e, "projects")}
-                        className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                        className="text-xs sm:text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
                     >
                         Projects
                     </a>
                     <a
+                        href="#experience"
+                        onClick={(e) => scrollToSection(e, "experience")}
+                        className="text-xs sm:text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                    >
+                        Experience
+                    </a>
+                    <a
                         href="#presentation"
                         onClick={(e) => scrollToSection(e, "presentation")}
-                        className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                        className="text-xs sm:text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
                     >
                         Presentation
                     </a>
                     <a
                         href="#skills"
                         onClick={(e) => scrollToSection(e, "skills")}
-                        className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                        className="text-xs sm:text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
                     >
                         Tech Stack
                     </a>

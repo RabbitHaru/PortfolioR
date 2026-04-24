@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import * as pdfjs from "pdfjs-dist";
 import { Loader2, FileText } from "lucide-react";
 
 interface PDFPreviewProps {
@@ -18,12 +17,8 @@ export default function PDFPreview({ fileUrl, pageNumber = 1, className = "", on
     const [totalPages, setTotalPages] = useState(0);
 
     useEffect(() => {
-        // 클라이언트 사이드에서만 워커를 설정합니다.
-        if (typeof window !== "undefined") {
-            pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-        }
-
         let isMounted = true;
+        let pdfjs: any = null;
 
         const renderPage = async () => {
             try {
@@ -31,6 +26,12 @@ export default function PDFPreview({ fileUrl, pageNumber = 1, className = "", on
                 
                 setLoading(true);
                 setError(false);
+
+                // PDF.js를 동적으로 불러옵니다. (SSR 오류 방지)
+                if (!pdfjs) {
+                    pdfjs = await import("pdfjs-dist");
+                    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+                }
 
                 // 1. PDF 문서 로드
                 const loadingTask = pdfjs.getDocument(fileUrl);

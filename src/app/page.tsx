@@ -4,13 +4,14 @@ import ProjectCard from "@/components/ProjectCard";
 import projectsData from "@/data/projects.json";
 import skillsData from "@/data/skills.json";
 import { Project, SkillCategory } from "@/types";
-import { Server, Database, Code2, Github, Sparkles, Container, Filter, Search } from "lucide-react";
+import { Server, Database, Code2, Github, Sparkles, Container, Filter, Search, Download } from "lucide-react";
 import CopyEmailButton from "@/components/CopyEmailButton";
 import CopyPhoneButton from "@/components/CopyPhoneButton";
 import PresentationSection from "@/components/PresentationSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroVisual from "@/components/HeroVisual";
 import BackToTop from "@/components/BackToTop";
+import Timeline from "@/components/Timeline";
 import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -36,7 +37,7 @@ export default function Home() {
   }, [projects, activeFilter]);
 
   return (
-    <main className="min-h-screen bg-[#0f172a] text-slate-50 selection:bg-cyan-500/30 font-sans selection:text-white">
+    <main className="min-h-screen bg-transparent text-slate-50 selection:bg-cyan-500/30 font-sans selection:text-white">
 
       {/* --- 1. HERO SECTION --- */}
       <section id="home" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden border-b border-white/5">
@@ -53,12 +54,12 @@ export default function Home() {
                   Backend Systems Architect
                 </div>
 
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-slate-500 leading-[1.05]">
-                  견고함과 정합성을<br />
-                  <span className="text-cyan-500">고민하는</span> 개발자입니다.
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-br from-white via-cyan-100 to-indigo-300 leading-[1.1] break-keep">
+                  견고함과 정합성을<br className="hidden sm:block" />
+                  <span className="text-cyan-400 drop-shadow-[0_0_25px_rgba(34,211,238,0.4)]">고민하는</span> 개발자입니다.
                 </h1>
 
-                <p className="text-slate-400 text-lg lg:text-xl max-w-2xl leading-relaxed mb-10 border-l border-cyan-500/30 pl-6 py-2">
+                <p className="text-slate-300/80 text-lg lg:text-xl max-w-2xl leading-relaxed mb-10 border-l border-indigo-500/30 pl-6 py-2 break-keep">
                   비즈니스 로직의 복잡성을 시스템의 견고함으로 해결하며,<br className="hidden md:block" /> 
                   데이터 정합성과 객체지향적 설계를 포기하지 않는 백엔드 개발자 김태완입니다.
                 </p>
@@ -71,10 +72,18 @@ export default function Home() {
 
                 {/* 메인 액션 버튼 */}
                 <div className="flex flex-wrap gap-5">
-                  <a href="#projects" className="px-10 py-4 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold transition-all hover:translate-y-[-2px] active:scale-95 shadow-2xl shadow-cyan-950">
+                  <a 
+                    href="/downloads/Protfolio_김태완.V.260423.pdf" 
+                    download
+                    className="px-10 py-4 rounded-2xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black transition-all hover:translate-y-[-4px] active:scale-95 shadow-[0_20px_40px_rgba(6,182,212,0.4)] flex items-center gap-3 group"
+                  >
+                    <Download className="w-5 h-5 group-hover:animate-bounce" />
+                    DOWNLOAD PORTFOLIO
+                  </a>
+                  <a href="#projects" className="px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-bold transition-all hover:translate-y-[-2px] border border-white/10">
                     프로젝트 리스트
                   </a>
-                  <a href="https://github.com/RabbitHaru" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-2xl bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold transition-all flex items-center gap-3 shadow-xl">
+                  <a href="https://github.com/RabbitHaru" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-2xl bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold transition-all flex items-center gap-3">
                     <Github className="w-6 h-6" />
                     GITHUB
                   </a>
@@ -90,8 +99,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- 2. PROJECTS SECTION --- */}
-      <section id="projects" className="py-24 bg-slate-900/10">
+      {/* --- 2. PRESENTATION SECTION --- */}
+      <PresentationSection />
+
+      {/* --- 3. PROJECTS SECTION --- */}
+      <section id="projects" className="py-24 bg-transparent">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -153,9 +165,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* --- 3. PRESENTATION SECTION --- */}
-      <PresentationSection />
+      <Timeline />
 
       {/* --- 4. SKILLS SECTION --- */}
       <section id="skills" className="py-24">

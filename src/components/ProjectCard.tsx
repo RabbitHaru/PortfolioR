@@ -57,9 +57,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     rotateY,
                     transformStyle: "preserve-3d",
                 }}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-[32px] bg-slate-900 border border-white/5 p-8 backdrop-blur-xl transition-all hover:border-cyan-500/30 cursor-pointer shadow-2xl"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-[32px] bg-white/70 dark:bg-slate-900/40 border border-slate-200 dark:border-white/5 p-8 backdrop-blur-xl transition-all hover:border-cyan-500/50 cursor-pointer shadow-xl dark:shadow-2xl"
                 onClick={() => setIsModalOpen(true)}
             >
+                {/* 내부 광채 효과 (다크모드 전용) */}
+                <div className="absolute -inset-2 bg-cyan-500/10 blur-[40px] opacity-0 dark:group-hover:opacity-100 transition-opacity pointer-events-none" />
+
                 {/* 배경 광택 효과 */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" 

@@ -79,20 +79,37 @@ export default function PDFModal({ isOpen, onClose, fileUrl, title, initialPage 
                             </div>
                             
                             <div className="flex items-center gap-4">
-                                <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-black/30 rounded-full text-xs font-mono text-cyan-400">
-                                    PAGE {currentPage} / {totalPageCount || '?'}
+                                <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-black/30 rounded-full text-xs font-mono text-cyan-400 border border-white/5">
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="opacity-50">PAGE</span>
+                                        <input
+                                            type="number"
+                                            min={1}
+                                            max={totalPageCount}
+                                            value={currentPage}
+                                            onChange={(e) => {
+                                                const val = parseInt(e.target.value);
+                                                if (!isNaN(val) && val >= 1 && val <= totalPageCount) {
+                                                    setCurrentPage(val);
+                                                }
+                                            }}
+                                            className="w-10 bg-transparent text-center text-cyan-400 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-500/50 rounded transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                        />
+                                        <span className="opacity-50">/</span>
+                                        <span>{totalPageCount || '?'}</span>
+                                    </div>
                                 </div>
                                 <a 
                                     href={fileUrl} 
                                     download 
-                                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
+                                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors border border-white/5"
                                     title="Download PDF"
                                 >
                                     <Download className="w-5 h-5" />
                                 </a>
                                 <button
                                     onClick={onClose}
-                                    className="p-2 rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-300 hover:text-red-400 transition-all active:scale-90"
+                                    className="p-2 rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-300 hover:text-red-400 transition-all active:scale-90 border border-white/5"
                                 >
                                     <X className="w-6 h-6" />
                                 </button>

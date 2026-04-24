@@ -93,10 +93,10 @@
   },
   {
     "id": "rbook",
-    "title": "rBook",
-    "period": "2025.11 ~ 2025.12",
-    "type": "개인프로젝트",
-    "organization": "부산IT교육센터",
+    "title": "rBook (Refactored)",
+    "period": "2026.03 ~ 2026.04",
+    "type": "개인 프로젝트 (자기주도 고도화)",
+    "organization": "Personal Improvement",
     "environment": [
       "Java",
       "Spring Boot",
@@ -108,12 +108,12 @@
       "Axios"
     ],
     "teamSize": 1,
-    "backgroundAndSummary": "프레임워크 없이 Servlet/JSP만으로 백엔드 동작 원리를 학습한 후, 현대적인 Spring Boot와 React 기반의 decoupled 아키텍처로 전면 리팩토링하여 시스템 확장성 확보.",
+    "backgroundAndSummary": "교육 과정 수료 후, Servlet/JSP로 작성된 초기 코드를 현대적인 Spring Boot와 React 기반의 decoupled 아키텍처로 전면 리팩토링하며 프레임워크의 핵심 동작 원리를 깊이 있게 재학습한 프로젝트.",
     "role": [
-      "Legacy to Modern 아키텍처 전환: 기존 SSR 구조를 REST API 중심의 CSR 구조로 전면 개편하여 프론트엔드와 백엔드의 독립적 확장성 확보.",
-      "Spring Boot & JPA 영속성 계층 고도화: 직접적인 JDBC 통신을 JPA로 전환하고 더티 체킹(Dirty Checking) 등 고수준 기능을 활용하여 데이터 핸들링 생산성 향상.",
-      "JWT 기반 무상태(Stateless) 인증 체계 구축: Spring Security를 도입하여 보안성을 강화하고, 사용자 인증 상태를 효율적으로 관리하는 토큰 기반 파이프라인 수립.",
-      "React & Vite 기반 고성능 UI 구현: 최신 React 기능을 활용한 컴포넌트 설계 및 Vite 빌드 도구를 통한 최적화된 프론트엔드 개발 환경 구축."
+      "Legacy to Modern 아키텍처 전면 전환: 수료 후 독립적으로 진행한 리팩토링을 통해 SSR 구조를 REST API 중심의 CSR 구조로 개편.",
+      "Spring Boot & JPA 영속성 계층 고도화: 직접적인 JDBC 통신을 JPA로 전환하고 데이터 핸들링 생산성 및 유지보수성 향상.",
+      "JWT 기반 무상태(Stateless) 인증 체계 구축: Spring Security를 도입하여 보안성을 강화하고, 사용자 인증 상태를 효율적으로 관리하는 파이프라인 수립.",
+      "현대적 개발 환경 구축: React & Vite 기반의 고성능 UI 구현 및 최적화된 프론트엔드 아키텍처 설계."
     ],
     "links": [
       {
@@ -121,6 +121,6 @@
         "url": "https://github.com/RabbitHaru/projectRBook.git"
       }
     ],
-    "lastUpdated": "2026.03.17"
+    "lastUpdated": "2026.04.23"
   }
 ]
